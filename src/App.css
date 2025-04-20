@@ -1,16 +1,52 @@
+/* Viewport uyumu zaten HTML tarafına eklendiğini varsayıyoruz */
+/* Genel stiller */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: clamp(1rem, 2.5vw, 1.1rem);
+  color: #333;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* Başlıklar */
+h1 {
+  font-size: clamp(2rem, 6vw, 3rem);
+  margin: 1rem 0;
+  text-align: center;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  margin-bottom: 1rem;
+  border-left: 5px solid #800000;
+  padding-left: 1rem;
+  color: #800000;
+}
+
+h3 {
+  font-size: clamp(1.2rem, 3.5vw, 1.6rem);
+  margin-bottom: 0.5rem;
+}
+
+/* Genel bölüm boşlukları */
+section {
+  padding: clamp(2rem, 6vw, 4rem) clamp(1rem, 4vw, 2rem);
+}
+
+/* App bileşenleri */
 .App {
   text-align: center;
 }
 
 .App-logo {
-  height: 40vmin;
+  height: clamp(20vmin, 30vmin, 40vmin);
   pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  animation: App-logo-spin infinite 20s linear;
 }
 
 .App-header {
@@ -20,14 +56,27 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  padding: clamp(1rem, 5vw, 3rem);
   color: white;
 }
 
 .App-link {
   color: #61dafb;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
 }
 
+/* Menü bağlantıları */
+nav a,
+.menu a,
+.App-header a {
+  font-size: clamp(1rem, 3vw, 1.2rem);
+  text-align: center;
+  margin: 0.5rem 0;
+  display: block;
+}
+
+/* Logo animasyonu */
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -35,32 +84,4 @@
   to {
     transform: rotate(360deg);
   }
-}
-/* Genel stiller */
-body {
-  font-family: 'Segoe UI', sans-serif;
-  line-height: 1.6;
-  font-size: 16px;
-  color: #333;
-  margin: 0;
-  padding: 0;
-}
-
-/* Smooth scroll */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Başlık görünümü */
-h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  border-left: 5px solid #800000;
-  padding-left: 1rem;
-  color: #800000;
-}
-
-/* Her bölüm arası boşluk */
-section {
-  padding: 4rem 2rem;
 }

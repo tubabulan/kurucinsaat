@@ -3,6 +3,11 @@ from flask_cors import CORS # type: ignore
 from config import Config
 from models import db
 from routes import project_routes
+from flask import Flask, request, jsonify # type: ignore
+from flask_cors import CORS # type: ignore
+
+app = Flask(__name__)
+CORS(app)  # Tüm kaynaklara erişime izin verilir (geliştirme için uygundur)
 
 app = Flask(__name__)
 app.config.from_object(Config)

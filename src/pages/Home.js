@@ -1,8 +1,10 @@
-import React, { forwardRef } from "react";
+import React, { forwardRef, useState } from "react";
 import "./Home.css";
 import { FaBuilding, FaExchangeAlt, FaHammer, FaDraftingCompass } from "react-icons/fa";
 
 const Home = forwardRef((props, ref) => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <div ref={ref}>
       {/* HEADER */}
@@ -13,14 +15,17 @@ const Home = forwardRef((props, ref) => {
           <hr />
           <h2>İNŞAAT</h2>
         </div>
-        <nav className="nav-right">
-          <a href="#">ANASAYFA</a>
-          <a href="#hakkimizda">HAKKIMIZDA</a>
-          <a href="#projeler">PROJELER</a>
-          <a href="#hizmetlerimiz">HİZMETLERİMİZ</a>
-          <a href="#iletisim">İLETİŞİM</a>
-          
 
+        <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
+          ☰
+        </div>
+
+        <nav className={`nav-right ${menuOpen ? "open" : ""}`}>
+          <a href="#" onClick={() => setMenuOpen(false)}>ANASAYFA</a>
+          <a href="#hakkimizda" onClick={() => setMenuOpen(false)}>HAKKIMIZDA</a>
+          <a href="#projeler" onClick={() => setMenuOpen(false)}>PROJELER</a>
+          <a href="#hizmetlerimiz" onClick={() => setMenuOpen(false)}>HİZMETLERİMİZ</a>
+          <a href="#iletisim" onClick={() => setMenuOpen(false)}>İLETİŞİM</a>
         </nav>
       </header>
 
@@ -38,7 +43,6 @@ const Home = forwardRef((props, ref) => {
           </p>
         </div>
       </section>
-
     </div>
   );
 });

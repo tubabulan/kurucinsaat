@@ -93,15 +93,33 @@
     flex-direction: column;
     text-align: center;
     align-items: center;
+    padding: 1.5rem 1rem; /* mobilde daha az padding */
+  }
+
+  .footer-menu,
+  .footer-iletisim {
+    min-width: auto; /* Mobilde esnek olsun */
+    width: 100%;     /* Tam genişlik alsın */
+  }
+
+  .footer-menu h4,
+  .footer-iletisim h4 {
+    font-size: 1rem;
+  }
+
+  .footer-iletisim p {
+    font-size: 0.85rem;
   }
 
   .footer-bottom {
     flex-direction: column;
     gap: 1rem;
     text-align: center;
+    font-size: 0.75rem; /* Daha küçük yazı */
   }
 
   .footer-icons a {
     margin: 0 0.5rem;
+    font-size: 1rem;
   }
 }
