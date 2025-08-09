@@ -11,6 +11,8 @@ body {
   margin: 0;
   padding: 0;
   line-height: 1.6;
+  overflow-x: hidden;
+  background-color: #f5f5f5; /* Genel arka plan rengi */
 }
 
 /* Başlıklar */
@@ -24,8 +26,9 @@ h2 {
   font-size: clamp(1.5rem, 4vw, 2rem);
   margin-bottom: 1rem;
   border-left: 5px solid #800000;
+  
   padding-left: 1rem;
-  color: #800000;
+  color: #800000; /* Başlık rengi değiştirildi */
 }
 
 h3 {
@@ -59,6 +62,7 @@ section {
   font-size: clamp(1rem, 2vw, 1.5rem);
   padding: clamp(1rem, 5vw, 3rem);
   color: white;
+  overflow-x: hidden;
 }
 
 .App-link {
@@ -83,5 +87,76 @@ nav a,
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+/* Mobil uyum */
+@media (max-width: 768px) {
+  /* App-header ve logo boyutlarını küçük ekranlar için optimize et */
+  .App-header {
+    padding: 2rem;
+    font-size: clamp(1rem, 5vw, 1.3rem);
+  }
+
+  .App-logo {
+    height: clamp(25vmin, 30vmin, 35vmin); /* Logo boyutu mobilde biraz küçüldü */
+  }
+
+  /* Menü linklerini mobilde daha büyük yapmak */
+  nav a,
+  .menu a,
+  .App-header a {
+    font-size: clamp(1rem, 4vw, 1.5rem); /* Mobilde daha büyük font */
+  }
+
+  /* Başlıklar için font boyutu ayarları */
+  h1 {
+    font-size: clamp(2rem, 7vw, 3rem);
+  }
+
+  h2 {
+    font-size: clamp(1.2rem, 5vw, 1.8rem); /* Daha küçük ekranlar için daha küçük yazı */
+  }
+
+  h3 {
+    font-size: clamp(1rem, 4vw, 1.3rem); /* Mobilde başlık fontu küçültüldü */
+  }
+
+  section {
+    padding: 2rem 1rem; /* Mobilde section padding azaldı */
+  }
+
+  /* Flex düzeni için ayarlamalar */
+  .App {
+    padding: 1rem; /* Genel padding azaltıldı */
+  }
+
+  /* Menü öğeleri için daha fazla boşluk */
+  nav a,
+  .menu a {
+    margin: 1rem 0; /* Menü öğeleri arasındaki boşluk artırıldı */
+  }
+}
+
+/* Daha küçük ekranlar için ek medya sorguları */
+@media (max-width: 480px) {
+  body {
+    font-size: clamp(0.9rem, 3vw, 1rem); /* Daha küçük ekranlar için font boyutu */
+  }
+
+  h1 {
+    font-size: clamp(1.8rem, 6vw, 2.5rem); /* Başlık boyutu daha da küçültüldü */
+  }
+
+  h2 {
+    font-size: clamp(1.5rem, 5vw, 1.6rem); /* H2 başlık boyutu ayarlandı */
+  }
+
+  h3 {
+    font-size: clamp(1rem, 4vw, 1.2rem); /* H3 başlık boyutu ayarlandı */
+  }
+
+  .App-header {
+    padding: 1rem; /* App-header padding azaltıldı */
   }
 }

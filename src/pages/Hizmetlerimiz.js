@@ -1,6 +1,6 @@
 import React from "react";
 import { FaBuilding, FaExchangeAlt, FaHammer, FaDraftingCompass } from "react-icons/fa";
-import "./Hizmetlerimiz.css"; // varsa stil dosyan
+import "./Hizmetlerimiz.css";
 
 function Hizmetlerimiz() {
     return (
@@ -8,13 +8,28 @@ function Hizmetlerimiz() {
             <div className="home-content">
                 <h1>Hizmetlerimiz</h1>
                 <hr />
-                <ul className="service-list">
-                    <li><FaBuilding size={22} /> Anahtar Teslim Projeler</li>
-                    <li><FaExchangeAlt size={22} /> Kat Karşılığı İnşaat</li>
-                    <li><FaHammer size={22} /> Tadilat ve Yenileme</li>
-                    <li><FaDraftingCompass size={22} /> Mimari & Proje Danışmanlığı</li>
-                </ul>
-
+                <div className="service-grid">
+                    <div className="service-card">
+                        <FaBuilding />
+                        <h3>Anahtar Teslim Projeler</h3>
+                        <p>Başlangıçtan teslimata kadar tüm süreçleri sizin için yönetiyoruz.</p>
+                    </div>
+                    <div className="service-card">
+                        <FaExchangeAlt />
+                        <h3>Kat Karşılığı İnşaat</h3>
+                        <p>Arsanıza en uygun projeyi geliştirip maksimum değer sağlıyoruz.</p>
+                    </div>
+                    <div className="service-card">
+                        <FaHammer />
+                        <h3>Tadilat ve Yenileme</h3>
+                        <p>Mevcut yapılarınızı modern standartlara uygun şekilde yeniliyoruz.</p>
+                    </div>
+                    <div className="service-card">
+                        <FaDraftingCompass />
+                        <h3>Mimari & Proje Danışmanlığı</h3>
+                        <p>Uzman mimar ve mühendis kadromuzla proje desteği sunuyoruz.</p>
+                    </div>
+                </div>
             </div>
         </section>
     );

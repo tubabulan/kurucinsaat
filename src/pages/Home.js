@@ -1,15 +1,27 @@
 import React, { forwardRef, useState } from "react";
 import "./Home.css";
 import { FaBuilding, FaExchangeAlt, FaHammer, FaDraftingCompass } from "react-icons/fa";
+import backgroundImage from "../assets/ana_ekran.jpg";
 
 const Home = forwardRef((props, ref) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div ref={ref}>
+    <div
+      ref={ref}
+      style={{
+        backgroundImage: `url(${backgroundImage})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        minHeight: '100vh',
+        width: '100%',
+      }}
+    >
       {/* HEADER */}
       <header className="header">
         <div className="logo-left">
+
           <h1>KURUÇ</h1>
           <hr />
           <hr />
@@ -30,10 +42,13 @@ const Home = forwardRef((props, ref) => {
       </header>
 
       {/* AÇIKLAMA */}
-      <section className="home-section">
+
+      <section
+        className="home-section"
+        
+      >
         <div className="home-content">
           <h1>Hayalinizdeki Yapıları Gerçeğe Dönüştürüyoruz</h1>
-          <hr />
           <p>
             İstanbul merkezli KURUÇ İnşaat olarak; modern, güvenli ve kaliteli yapılar
             inşa ediyor, müşteri memnuniyetini her şeyin önünde tutuyoruz.
@@ -43,6 +58,7 @@ const Home = forwardRef((props, ref) => {
           </p>
         </div>
       </section>
+
     </div>
   );
 });

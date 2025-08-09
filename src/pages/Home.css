@@ -1,168 +1,104 @@
-/* Genel font */
 body {
-  font-family: 'Poppins', sans-serif;
   margin: 0;
-  padding: 0;
+  font-family: 'Arial', sans-serif;
+  color: #333;
 }
 
-/* HEADER alanı */
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #450505;
-  padding: clamp(1rem, 5vw, 2rem) clamp(1rem, 8vw, 4rem);
-  flex-wrap: wrap;
-}
-
-.logo-left {
-  color: white;
-  text-align: center;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: fixed; /* Sabit konum */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
 }
 
 .logo-left h1 {
-  font-size: clamp(2rem, 6vw, 3rem);
+  font-size: 2.5rem;
   margin: 0;
+  color: #630a0a;
 }
 
 .logo-left h2 {
-  font-size: clamp(1rem, 3.5vw, 1.5rem);
-  margin: 0.5rem 0 0 0;
+  font-size: 1.5rem;
+  margin: 0;
+  color: #630a0a;
 }
 
-.logo-left hr {
-  width: clamp(80px, 20vw, 170px);
-  height: 2px;
-  background-color: white;
-  border: none;
-  margin: 6px auto;
+.hamburger {
+  font-size: 2rem;
+  cursor: pointer;
+  display: none; /* Mobil görünümde gösterilecek */
 }
 
 .nav-right {
   display: flex;
-  gap: clamp(0.5rem, 5vw, 2rem);
-  flex-wrap: wrap;
-  justify-content: center;
+  gap: 20px;
 }
 
 .nav-right a {
-  color: white;
-  text-decoration: underline;
+  text-decoration: none;
+  color: #630a0a;
   font-weight: bold;
-  font-size: clamp(0.9rem, 3vw, 1.2rem);
-  transition: opacity 0.3s ease;
+  transition: color 0.3s;
 }
 
 .nav-right a:hover {
-  opacity: 0.7;
+  color: #3498db;
 }
 
-/* Ana bölümler */
 .home-section {
-  padding: clamp(2rem, 7vw, 5rem) clamp(1rem, 5vw, 2rem);
-  color: rgb(71, 19, 19);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  animation: fadeIn 1s ease-out;
+  min-height: calc(100vh - 80px); /* Header yüksekliğini çıkar */
+  padding: 20px;
+  color: white;
+  background: rgba(0, 0, 0, 0.5); /* Arka planı koyulaştır */
+  margin-top: 0px; /* Header yüksekliği kadar boşluk bırak */
 }
 
 .home-content h1 {
-  font-size: clamp(1.8rem, 6vw, 2.8rem);
-  margin-bottom: 1rem;
-  color: #2d0000;
-  font-weight: 600;
-}
-
-.home-content hr {
-  width: clamp(60px, 15vw, 100px);
-  height: 3px;
-  background: rgb(112, 28, 28);
-  border: none;
-  margin: 1rem auto;
-}
-
-.home-content h2 {
-  font-size: clamp(1.1rem, 4vw, 1.5rem);
-  margin: 0.5rem 0;
-  line-height: 1.6;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
 }
 
 .home-content p {
-  font-size: clamp(0.95rem, 2.8vw, 1.1rem);
-  margin: 1rem auto;
-  max-width: 700px;
-  color: #611111;
-}
-@media (max-width: 768px) {
-  .logo-left h1 {
-    font-size: 1.5rem;
-  }
-
-  .logo-left h2 {
-    font-size: 1rem;
-  }
-
-  .nav-right a {
-    font-size: 0.9rem;
-  }
-
-  .home-content h1 {
-    font-size: 1.5rem;
-  }
-
-  .home-content h2 {
-    font-size: 1.1rem;
-  }
-
-  .home-content p {
-    font-size: 0.9rem;
-  }
-
-  .header {
-    flex-direction: column;
-    gap: 1rem;
-    text-align: center;
-  }
-
-  .nav-right {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-}
-/* Hamburger icon */
-.hamburger {
-  display: none;
-  font-size: 2rem;
-  color: white;
-  cursor: pointer;
+  font-size: 1.2rem;
+  line-height: 1.6;
 }
 
-/* Menü */
-.nav-right {
-  display: flex;
-  gap: clamp(0.5rem, 5vw, 2rem);
-}
-
-/* Mobil Görünüm */
+/* Mobil stil */
 @media (max-width: 768px) {
   .hamburger {
-    display: block;
+    display: block; /* Mobil görünümde göster */
+    margin-left: 20px; /* Sol taraftan biraz boşluk bırak */
   }
 
   .nav-right {
-    display: none;
+    display: none; /* Mobilde varsayılan olarak gizle */
     flex-direction: column;
+    position: absolute;
+    top: 80px; /* Header yüksekliği */
+    right: 0;
+    background-color: white;
     width: 100%;
-    text-align: center;
-    background-color: #450505;
-    padding: 1rem 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 9;
   }
 
   .nav-right.open {
-    display: flex;
+    display: flex; /* Menü açıldığında göster */
   }
 
   .nav-right a {
-    padding: 0.5rem 0;
-    font-size: 1rem;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
   }
 }

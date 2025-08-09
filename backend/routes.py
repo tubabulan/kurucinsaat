@@ -1,6 +1,5 @@
 from flask import Blueprint, request, jsonify # type: ignore
 from models import db, Project
-
 project_routes = Blueprint("project_routes", __name__)
 @project_routes.route("/selam", methods=["GET"])
 def selam_ver():

@@ -44,12 +44,7 @@ section {
 }
 
 /* Hakkımızda */
-.hakkimizda-container {
-  padding: clamp(1rem, 5vw, 4rem);
-  color: #f7f4f4;
-  background-color: #450505;
-  margin: 0 auto;
-}
+
 
 .hakkimizda-container h2 {
   color: #fff;

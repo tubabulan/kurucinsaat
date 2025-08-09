@@ -1,15 +1,22 @@
+/* İletişim Wrapper */
 .iletisim-wrapper {
   font-family: 'Arial', sans-serif;
   background-color: #f9f9f9;
   padding: 4rem 1rem;
 }
 
+/* Harita */
 .harita-kapsayici iframe {
   width: 100%;
   height: 400px;
   border: none;
   border-radius: 8px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease; /* Harita animasyonu */
+}
+
+.harita-kapsayici iframe:hover {
+  transform: scale(1.02); /* Harita üzerine gelindiğinde büyüme efekti */
 }
 
 /* FLEX DÜZEN */
@@ -25,18 +32,28 @@
   padding: 2rem;
   border-radius: 10px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.3s ease; /* Flex düzeni animasyonu */
+}
+
+.iletisim-flex:hover {
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1); /* Hover durumunda gölge artışı */
 }
 
 /* SOL BÖLÜM */
 .iletisim-sol {
   flex: 1;
   min-width: 280px;
+  transition: transform 0.3s ease; /* Sol bölüm animasyonu */
+}
+
+.iletisim-sol:hover {
+  transform: translateY(-5px); /* Sol bölüm üzerine gelindiğinde yukarı hareket */
 }
 
 .iletisim-sol h2 {
   color: #800000;
   margin-bottom: 1rem;
-  font-size: 1.8rem;
+  font-size: clamp(1.5rem, 5vw, 1.8rem); /* Mobilde font küçültüldü */
   border-bottom: 2px solid #800000;
   padding-bottom: 0.5rem;
 }
@@ -53,6 +70,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
+  transition: color 0.3s ease; /* Metin animasyonu */
 }
 
 .iletisim-sol a {
@@ -62,6 +80,7 @@
 
 .iletisim-sol a:hover {
   text-decoration: underline;
+  color: #a00000; /* Hover rengi */
 }
 
 /* SAĞ BÖLÜM */
@@ -70,16 +89,21 @@
   min-width: 280px;
   margin-top: 60px;
   margin-left: 0px;
+  transition: transform 0.3s ease; /* Sağ bölüm animasyonu */
+}
+
+.iletisim-sag:hover {
+  transform: translateY(-5px); /* Sağ bölüm üzerine gelindiğinde yukarı hareket */
 }
 
 .iletisim-sag h4 {
   color: #800000;
-  font-size: 1.2rem;
+  font-size: clamp(1.1rem, 4vw, 1.2rem); /* Mobilde font küçültüldü */
   margin-bottom: 1rem;
 }
 
 .iletisim-sag p {
-  font-size: 1rem;
+  font-size: clamp(1rem, 3vw, 1.1rem); /* Mobilde font küçültüldü */
   margin-bottom: 0.75rem;
 }
 
@@ -90,20 +114,36 @@
 
 .iletisim-sag a:hover {
   text-decoration: underline;
+  color: #a00000; /* Hover rengi */
 }
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
   .iletisim-flex {
-    flex-direction: column;
-    padding: 1.5rem;
+    flex-direction: column; /* Yan yana değil alt alta */
+    padding: 1rem;
+    gap: 2rem; /* Bölümler arası boşluk */
+  }
+
+  .iletisim-sol, .iletisim-sag {
+    min-width: 100%;
+    margin: 0;
   }
 
   .iletisim-sol h2 {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
   }
 
   .iletisim-sag h4 {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+  }
+
+  .iletisim-sol p, .iletisim-sag p {
+    font-size: 0.95rem;
+  }
+
+  .harita-kapsayici iframe {
+    height: 250px;
+    border-radius: 8px;
   }
 }
